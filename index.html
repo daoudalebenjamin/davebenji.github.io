@@ -1,171 +1,363 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dave Benji Camara</title>
+    <meta name="description" content="Site officiel de Dave Benji Camara">
+    <meta name="author" content="Dave Benji Camara">
 
-  <meta name="description" content="Bienvenue sur le site officiel de Dave Benji Camara.">
+    <title>Dave Benji Camara | Site officiel</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Fond lumineux -->
-  <div class="background-glow glow-one"></div>
-  <div class="background-glow glow-two"></div>
-
-  <!-- Navigation -->
-  <header class="glass-nav">
-
-    <div class="logo">
-      <span>DB</span>
+    <!-- Fond animé -->
+    <div class="background">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
     </div>
 
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#apropos">À propos</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <button id="themeButton" class="glass-button">
-      ☀️
-    </button>
-
-  </header>
-
-
-  <!-- Accueil -->
-  <main>
-
-    <section id="accueil" class="hero">
-
-      <div class="glass-card hero-card">
-
-        <p class="small-title">BIENVENUE</p>
-
-        <h1>
-          Dave <span>Benji</span> Camara
-        </h1>
-
-        <p class="hero-text">
-          Bienvenue dans mon univers.
-          Découvrez mon histoire, mes projets,
-          mes passions et bien plus encore.
-        </p>
-
-        <div class="buttons">
-
-          <a href="#apropos" class="primary-button">
-            Découvrir
-          </a>
-
-          <a href="#contact" class="secondary-button">
-            Me contacter
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- À propos -->
-    <section id="apropos" class="section">
-
-      <div class="glass-card">
-
-        <p class="small-title">À PROPOS</p>
-
-        <h2>Qui suis-je ?</h2>
-
-        <p>
-          Je suis Dave Benji Camara.
-          Bienvenue sur mon espace personnel,
-          un endroit où je partage mon univers,
-          mes idées, mes projets et mes passions.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- Galerie -->
-    <section id="galerie" class="section">
-
-      <div class="glass-card">
-
-        <p class="small-title">GALERIE</p>
-
-        <h2>Mon univers</h2>
-
-        <div class="gallery">
-
-          <div class="gallery-item">
-            <span>📸</span>
-          </div>
-
-          <div class="gallery-item">
-            <span>✨</span>
-          </div>
-
-          <div class="gallery-item">
-            <span>🎬</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Contact -->
-    <section id="contact" class="section">
-
-      <div class="glass-card contact-card">
-
-        <p class="small-title">CONTACT</p>
-
-        <h2>Restons connectés</h2>
-
-        <p>
-          Une question, une idée ou simplement
-          envie de discuter ?
-        </p>
-
-        <a href="mailto:contact@davebenji.com"
-           class="primary-button">
-          ✉️ Me contacter
+    <!-- Navigation -->
+    <header class="header">
+        <a href="#accueil" class="logo">
+            <span>DB</span>
+            Dave Benji
         </a>
 
-      </div>
+        <nav class="nav" id="nav">
+            <a href="#accueil">Accueil</a>
+            <a href="#apropos">À propos</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#projets">Projets</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-    </section>
-
-  </main>
-
-
-  <!-- Pied de page -->
-  <footer>
-
-    <p>
-      © 2026 Dave Benji Camara
-    </p>
-
-    <p>
-      Créé avec passion.
-    </p>
-
-  </footer>
+        <div class="header-buttons">
+            <button id="themeBtn" class="icon-btn" aria-label="Changer le thème">☀️</button>
+            <button id="menuBtn" class="menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </header>
 
 
-  <script src="script.js"></script>
+    <!-- ACCUEIL -->
+    <main>
+
+        <section id="accueil" class="hero section">
+
+            <div class="hero-content reveal">
+
+                <p class="small-title">BIENVENUE SUR MON SITE OFFICIEL</p>
+
+                <h1>
+                    Je suis
+                    <span class="gradient-text">Dave Benji Camara</span>
+                </h1>
+
+                <p class="hero-text">
+                    Bienvenue dans mon univers. Découvrez ma présentation,
+                    mes photos, mes projets et différents contenus à travers
+                    un espace moderne et personnel.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#apropos" class="btn primary">Découvrir</a>
+                    <a href="#contact" class="btn secondary">Me contacter</a>
+                </div>
+
+                <div class="social-mini">
+                    <a href="tel:+224610426376">📞</a>
+                    <a href="https://wa.me/224610426376" target="_blank">💬</a>
+                    <a href="mailto:daoudalebenjamin@gmail.com">✉️</a>
+                </div>
+
+            </div>
+
+
+            <div class="hero-card reveal">
+
+                <div class="profile-ring">
+                    <div class="profile-placeholder">
+                        <span>DB</span>
+                    </div>
+                </div>
+
+                <h2>Dave Benji Camara</h2>
+                <p>Bienvenue dans mon espace personnel</p>
+
+                <div class="floating-tag tag1">✨ Créativité</div>
+                <div class="floating-tag tag2">🚀 Ambition</div>
+                <div class="floating-tag tag3">💎 Vision</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- À PROPOS -->
+        <section id="apropos" class="section">
+
+            <div class="section-title reveal">
+                <p>QUI SUIS-JE ?</p>
+                <h2>À propos de <span>moi</span></h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="glass-card reveal">
+                    <div class="card-icon">👤</div>
+                    <h3>Mon univers</h3>
+                    <p>
+                        Cet espace est dédié à mon identité, mes passions,
+                        mes projets et tout ce que je souhaite partager
+                        avec vous.
+                    </p>
+                </div>
+
+                <div class="glass-card reveal">
+                    <div class="card-icon">🎯</div>
+                    <h3>Ma vision</h3>
+                    <p>
+                        Avancer, apprendre, créer et construire quelque chose
+                        qui me ressemble.
+                    </p>
+                </div>
+
+                <div class="glass-card reveal">
+                    <div class="card-icon">⚡</div>
+                    <h3>Mon énergie</h3>
+                    <p>
+                        Toujours chercher à progresser et transformer les
+                        idées en réalisations.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALERIE -->
+        <section id="galerie" class="section">
+
+            <div class="section-title reveal">
+                <p>MES SOUVENIRS</p>
+                <h2>Ma <span>galerie</span></h2>
+            </div>
+
+            <p class="section-description reveal">
+                Tu pourras remplacer ces images par tes propres photos
+                directement dans le dossier de ton site.
+            </p>
+
+            <div class="gallery">
+
+                <!-- PHOTO 1 -->
+                <div class="gallery-item reveal">
+                    <img src="images/photo1.jpg" alt="Photo de Dave Benji">
+                    <div class="gallery-overlay">
+                        <span>Photo 01</span>
+                    </div>
+                </div>
+
+                <!-- PHOTO 2 -->
+                <div class="gallery-item reveal">
+                    <img src="images/photo2.jpg" alt="Photo de Dave Benji">
+                    <div class="gallery-overlay">
+                        <span>Photo 02</span>
+                    </div>
+                </div>
+
+                <!-- PHOTO 3 -->
+                <div class="gallery-item reveal">
+                    <img src="images/photo3.jpg" alt="Photo de Dave Benji">
+                    <div class="gallery-overlay">
+                        <span>Photo 03</span>
+                    </div>
+                </div>
+
+                <!-- PHOTO 4 -->
+                <div class="gallery-item reveal">
+                    <img src="images/photo4.jpg" alt="Photo de Dave Benji">
+                    <div class="gallery-overlay">
+                        <span>Photo 04</span>
+                    </div>
+                </div>
+
+                <!-- PHOTO 5 -->
+                <div class="gallery-item reveal">
+                    <img src="images/photo5.jpg" alt="Photo de Dave Benji">
+                    <div class="gallery-overlay">
+                        <span>Photo 05</span>
+                    </div>
+                </div>
+
+                <!-- PHOTO 6 -->
+                <div class="gallery-item reveal">
+                    <img src="images/photo6.jpg" alt="Photo de Dave Benji">
+                    <div class="gallery-overlay">
+                        <span>Photo 06</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJETS -->
+        <section id="projets" class="section">
+
+            <div class="section-title reveal">
+                <p>CE QUE JE FAIS</p>
+                <h2>Mes <span>projets</span></h2>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card reveal">
+                    <span class="project-number">01</span>
+                    <div class="card-icon">💻</div>
+                    <h3>Projet digital</h3>
+                    <p>
+                        Un espace pour présenter mes projets numériques
+                        et mes créations.
+                    </p>
+                    <a href="#contact">En savoir plus →</a>
+                </article>
+
+                <article class="project-card reveal">
+                    <span class="project-number">02</span>
+                    <div class="card-icon">🎨</div>
+                    <h3>Créativité</h3>
+                    <p>
+                        Une section destinée à mes idées, créations
+                        et réalisations.
+                    </p>
+                    <a href="#contact">En savoir plus →</a>
+                </article>
+
+                <article class="project-card reveal">
+                    <span class="project-number">03</span>
+                    <div class="card-icon">🚀</div>
+                    <h3>Futurs projets</h3>
+                    <p>
+                        Cette partie pourra évoluer avec mes nouveaux
+                        projets et réalisations.
+                    </p>
+                    <a href="#contact">En savoir plus →</a>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+
+            <div class="section-title reveal">
+                <p>RESTONS EN CONTACT</p>
+                <h2>Me <span>contacter</span></h2>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info glass-card reveal">
+
+                    <h3>Parlons ensemble 👋</h3>
+
+                    <p>
+                        Une question, une idée ou simplement envie de me contacter ?
+                        Utilise l'un des moyens ci-dessous.
+                    </p>
+
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <div>
+                            <small>Téléphone</small>
+                            <a href="tel:+224610426376">610 42 63 76</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>💬</span>
+                        <div>
+                            <small>WhatsApp</small>
+                            <a href="https://wa.me/224610426376" target="_blank">
+                                610 42 63 76
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <div>
+                            <small>Email</small>
+                            <a href="mailto:daoudalebenjamin@gmail.com">
+                                daoudalebenjamin@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <form class="contact-form glass-card reveal" id="contactForm">
+
+                    <input type="text" id="name" placeholder="Votre nom" required>
+
+                    <input type="email" id="email" placeholder="Votre email" required>
+
+                    <textarea id="message" rows="6" placeholder="Votre message..." required></textarea>
+
+                    <button type="submit" class="btn primary">
+                        Envoyer le message ✨
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            <span>DB</span>
+            Dave Benji Camara
+        </div>
+
+        <p>
+            © <span id="year"></span> Dave Benji Camara — Tous droits réservés.
+        </p>
+
+        <div class="footer-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#apropos">À propos</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </footer>
+
+
+    <!-- Bouton retour en haut -->
+    <button id="topBtn" class="top-btn">↑</button>
+
+
+    <script src="script.js"></script>
 
 </body>
 </html>
