@@ -1,132 +1,139 @@
-// ===============================
-// DAVE BENJI CAMARA
-// INTERACTIONS DU SITE
-// ===============================
+// MENU MOBILE
 
-document.addEventListener("DOMContentLoaded", () => {
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
 
-  // -------------------------------
-  // MODE CLAIR / SOMBRE
-  // -------------------------------
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
 
-  const themeButton = document.getElementById("themeButton");
-
-  themeButton.addEventListener("click", () => {
-
-    document.body.classList.toggle("light-mode");
-
-    if (document.body.classList.contains("light-mode")) {
-      themeButton.textContent = "🌙";
+    if (nav.classList.contains("active")) {
+        menuBtn.textContent = "✕";
     } else {
-      themeButton.textContent = "☀️";
+        menuBtn.textContent = "☰";
+    }
+});
+
+
+// Fermer le menu après avoir cliqué sur un lien
+
+document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        menuBtn.textContent = "☰";
+    });
+});
+
+
+// MODE SOMBRE / CLAIR
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+        themeBtn.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+    } else {
+        themeBtn.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
     }
 
-  });
+});
 
 
-  // -------------------------------
-  // ANIMATION AU DÉFILEMENT
-  // -------------------------------
+// Garder le thème choisi
 
-  const sections = document.querySelectorAll(".section");
+const savedTheme = localStorage.getItem("theme");
 
-  const observer = new IntersectionObserver(
+if (savedTheme === "light") {
+    document.body.classList.add("light");
+    themeBtn.textContent = "🌙";
+}
+
+
+// ANIMATION AU DÉFILEMENT
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
     (entries) => {
 
-      entries.forEach((entry) => {
+        entries.forEach(entry => {
 
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
 
-      });
+        });
 
     },
     {
-      threshold: 0.15
+        threshold: 0.12
     }
-  );
+);
 
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
+revealElements.forEach(element => {
+    observer.observe(element);
+});
 
 
-  // -------------------------------
-  // EFFET SUR LES BOUTONS
-  // -------------------------------
+// BOUTON RETOUR EN HAUT
 
-  const buttons = document.querySelectorAll(
-    ".primary-button, .secondary-button, .glass-button"
-  );
+const topBtn = document.getElementById("topBtn");
 
-  buttons.forEach((button) => {
+window.addEventListener("scroll", () => {
 
-    button.addEventListener("click", () => {
+    if (window.scrollY > 500) {
+        topBtn.classList.add("show");
+    } else {
+        topBtn.classList.remove("show");
+    }
 
-      button.style.transform = "scale(0.95)";
+});
 
-      setTimeout(() => {
-        button.style.transform = "";
-      }, 150);
+topBtn.addEventListener("click", () => {
 
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 
-  });
+});
 
 
-  // -------------------------------
-  // ANIMATION DE LA GALERIE
-  // -------------------------------
+// ANNÉE AUTOMATIQUE
 
-  const galleryItems =
-    document.querySelectorAll(".gallery-item");
-
-  galleryItems.forEach((item) => {
-
-    item.addEventListener("mouseenter", () => {
-      item.style.transform =
-        "scale(1.05) translateY(-5px)";
-    });
-
-    item.addEventListener("mouseleave", () => {
-      item.style.transform = "";
-    });
-
-  });
+document.getElementById("year").textContent = new Date().getFullYear();
 
 
-  // -------------------------------
-  // EFFET PARALLAXE LÉGER
-  // -------------------------------
+// FORMULAIRE DE CONTACT
 
-  document.addEventListener("mousemove", (event) => {
+const contactForm = document.getElementById("contactForm");
 
-    const x =
-      (event.clientX / window.innerWidth - 0.5) * 10;
+contactForm.addEventListener("submit", function(event) {
 
-    const y =
-      (event.clientY / window.innerHeight - 0.5) * 10;
+    event.preventDefault();
 
-    document.querySelectorAll(".background-glow")
-      .forEach((glow, index) => {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-        const multiplier = index === 0 ? 1 : -1;
+    const subject = encodeURIComponent(
+        "Message depuis le site de Dave Benji"
+    );
 
-        glow.style.transform =
-          `translate(${x * multiplier}px, ${y * multiplier}px)`;
+    const body = encodeURIComponent(
+        "Nom : " + name +
+        "\nEmail : " + email +
+        "\n\nMessage :\n" + message
+    );
 
-      });
-
-  });
-
-
-  // -------------------------------
-  // MESSAGE DANS LA CONSOLE
-  // -------------------------------
-
-  console.log(
-    "✨ Bienvenue sur le site de Dave Benji Camara."
-  );
+    window.location.href =
+        "mailto:daoudalebenjamin@gmail.com?subject=" +
+        subject +
+        "&body=" +
+        body;
 
 });
