@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Segoe UI", sans-serif;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 20% 10%, #4f46e5 0, transparent 28%),
+    radial-gradient(circle at 85% 30%, #0ea5e9 0, transparent 25%),
+    linear-gradient(135deg, #050509, #111827 55%, #020617);
+  overflow-x: hidden;
+}
+
+/* Lumières d'arrière-plan */
+
+.background-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow-one {
+  top: 10%;
+  left: -100px;
+  background: #8b5cf6;
+}
+
+.glow-two {
+  right: -100px;
+  top: 50%;
+  background: #06b6d4;
+}
+
+/* Navigation */
+
+.glass-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 900px);
+  padding: 12px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 28px;
+
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.20);
+
+  z-index: 1000;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  background: linear-gradient(135deg, #fff, #9ca3af);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Boutons */
+
+.glass-button,
+.primary-button,
+.secondary-button {
+  border-radius: 22px;
+  padding: 12px 18px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 18px;
+}
+
+.glass-button:hover,
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Accueil */
+
+.hero {
+  min-height: 100vh;
+  padding: 130px 20px 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card {
+  max-width: 850px;
+  text-align: center;
+}
+
+.glass-card {
+  padding: 45px;
+  border-radius: 35px;
+
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(30px) saturate(160%);
+  -webkit-backdrop-filter: blur(30px) saturate(160%);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.30),
+    inset 0 1px rgba(255, 255, 255, 0.18);
+
+  animation: appear 1s ease forwards;
+}
+
+.small-title {
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  opacity: 0.65;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: clamp(45px, 9vw, 90px);
+  line-height: 0.95;
+  letter-spacing: -5px;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  background: linear-gradient(135deg, #a78bfa, #38bdf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-text {
+  max-width: 650px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primary-button {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.92);
+  color: #050509;
+  font-weight: 700;
+}
+
+.secondary-button {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.10);
+  color: white;
+}
+
+/* Sections */
+
+.section {
+  min-height: 70vh;
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.section h2 {
+  font-size: clamp(35px, 6vw, 60px);
+  margin-bottom: 20px;
+  letter-spacing: -3px;
+}
+
+.section p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Galerie */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  min-height: 180px;
+  border-radius
+
+  @media (max-width: 650px) {
